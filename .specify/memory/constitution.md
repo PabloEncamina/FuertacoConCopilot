@@ -1,50 +1,46 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Static Web App Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Client-Side Only Architecture
+All functionality runs in the browser; No server-side dependencies; Static files served directly (HTML, CSS, JavaScript); Self-contained application bundle
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Local Storage First
+Data persists in browser localStorage; All state saved automatically; Graceful handling of storage quota limits; No external database dependencies
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Progressive Enhancement
+Core functionality works without JavaScript; Enhanced features layer on top; Accessible by default; Mobile-responsive design required
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Minimal Dependencies
+Prefer vanilla JavaScript over frameworks; Essential libraries only; Keep bundle size under control; No build step required for basic functionality
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. User Privacy
+All data stays local to user's browser; No tracking or analytics without consent; Clear data management controls; Export/import functionality for user data
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Technical Requirements
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Browser Compatibility
+Support modern evergreen browsers (Chrome, Firefox, Safari, Edge); ES6+ JavaScript acceptable; CSS Grid and Flexbox for layouts; localStorage API required
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Data Management
+Implement data validation before storage; Handle storage quota errors gracefully; Provide clear feedback on save/load operations; Include data export to JSON functionality
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Performance
+Initial page load under 3 seconds; Minimize reflows and repaints; Lazy load non-critical resources; Optimize images and assets
+
+## Development Standards
+
+### Code Quality
+Semantic HTML markup; Clean, readable JavaScript; Consistent naming conventions; Comments for complex logic only
+
+### Testing
+Manual testing in target browsers; Basic functionality verification; localStorage operations tested; Error handling verified
+
+### File Structure
+Logical separation of HTML, CSS, and JavaScript; Assets organized in appropriate folders; Clear entry point (index.html)
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution defines the minimal viable requirements; All features must comply with client-side and local storage constraints; Enhancements should not compromise core principles; Simplicity and user control are paramount
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-11-04 | **Last Amended**: 2025-11-04
