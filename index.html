@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gym Workout Routine Manager - Create and manage your workout lists">
+    <title>Workout Routine Manager</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+    <!-- Home View -->
+    <div id="home-view" class="view active">
+        <header>
+            <h1>Workout Routine Manager</h1>
+        </header>
+        <main class="home-main">
+            <button id="btn-my-lists" class="btn-primary">My Saved Lists</button>
+            <button id="btn-create-list" class="btn-primary">Create New List</button>
+            <button id="btn-export" class="btn-secondary">Export Data</button>
+        </main>
+    </div>
+
+    <!-- List Selection View -->
+    <div id="list-selection-view" class="view">
+        <header>
+            <button id="btn-back-from-selection" class="btn-back">← Back</button>
+            <h1>My Saved Lists</h1>
+        </header>
+        <main>
+            <div id="list-selection-container"></div>
+            <div id="empty-lists-message" class="empty-message" style="display: none;">
+                <p>No workout lists yet. Create your first one!</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- List Viewer View -->
+    <div id="list-viewer-view" class="view">
+        <header>
+            <button id="btn-back-from-viewer" class="btn-back">← Back</button>
+            <h1 id="list-viewer-title"></h1>
+        </header>
+        <main>
+            <div id="exercise-list-container"></div>
+        </main>
+    </div>
+
+    <!-- List Creation View -->
+    <div id="list-creation-view" class="view">
+        <header>
+            <button id="btn-back-from-creation" class="btn-back">← Back</button>
+            <h1>Create New List</h1>
+        </header>
+        <main>
+            <form id="list-creation-form">
+                <div class="form-group">
+                    <label for="list-name">List Name *</label>
+                    <input type="text" id="list-name" name="list-name" maxlength="50" required>
+                </div>
+
+                <div id="exercises-container">
+                    <h2>Exercises</h2>
+                    <div id="exercise-forms"></div>
+                </div>
+
+                <button type="button" id="btn-add-exercise" class="btn-secondary">+ Add Exercise</button>
+
+                <div class="form-actions">
+                    <button type="submit" id="btn-save-list" class="btn-primary">Save List</button>
+                </div>
+
+                <div id="form-errors" class="error-message" style="display: none;"></div>
+            </form>
+        </main>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="error-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Error</h2>
+            <p id="error-message"></p>
+            <button id="btn-close-error" class="btn-primary">OK</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/storage.js"></script>
+    <script src="js/list-viewer.js"></script>
+    <script src="js/list-manager.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
